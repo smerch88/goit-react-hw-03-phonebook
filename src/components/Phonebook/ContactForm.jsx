@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
+import { Button } from '@mantine/core';
+import { Input } from '@mantine/core';
 
 export class ContactForm extends Component {
   state = {
@@ -33,7 +35,7 @@ export class ContactForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor={this.nameInputID}>
             Name
-            <input
+            <Input
               type="text"
               name="name"
               value={name}
@@ -45,7 +47,7 @@ export class ContactForm extends Component {
           </label>
           <label htmlFor={this.nameInputID}>
             Number
-            <input
+            <Input
               type="tel"
               name="number"
               value={number}
@@ -55,7 +57,7 @@ export class ContactForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <button type="submit">Add Contact</button>{' '}
+          <Button type="submit">Add Contact</Button>{' '}
         </form>
       </>
     );

@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Input } from '@mantine/core';
 
 export class Filter extends Component {
   state = {
@@ -17,7 +18,7 @@ export class Filter extends Component {
       <>
         <label htmlFor="">
           filter
-          <input
+          <Input
             type="text"
             name="filter"
             value={filter}

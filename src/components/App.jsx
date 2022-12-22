@@ -15,6 +15,21 @@ export default class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const localContacts = JSON.parse(localStorage.getItem('contacts'));
+    if (localContacts) {
+      this.setState({
+        contacts: localContacts,
+      });
+    }
+  }
+
+  componentDidUpdate(_, prevstate) {
+    if (this.state.contacts !== prevstate.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
   deleteUser = userId => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(({ id }) => id !== userId),

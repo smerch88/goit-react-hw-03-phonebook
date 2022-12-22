@@ -1,9 +1,11 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from '@mantine/core';
 
 export class ContactList extends Component {
   render() {
     const { contacts, filter } = this.props;
+
     return (
       <>
         <ul>
@@ -15,9 +17,9 @@ export class ContactList extends Component {
               <li key={contact.id}>
                 {' '}
                 {contact.name}: {contact.number}
-                <button onClick={() => this.props.deleteUser(contact.id)}>
+                <Button onClick={() => this.props.deleteUser(contact.id)}>
                   Delete
-                </button>
+                </Button>
               </li>
             ))}
         </ul>
